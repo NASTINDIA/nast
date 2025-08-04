@@ -1,0 +1,55 @@
+
+
+
+<!-- Include navbar fragment here -->
+  <div th:replace="~{fragments/navbar :: navbar}"></div>
+  
+  
+<div th:fragments="courses">
+<div style="background-color: #f8f9fc; padding: 40px 20px; font-family: 'Segoe UI', sans-serif; color: #002244;">
+
+  <h2 style="color: #ff0000; font-size: 36px; font-weight: bold; text-align: left; margin-bottom: 20px;">
+    OUR Programs
+  </h2>
+
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-bottom: 40px;">
+    <!-- Program Cards (Keep using your current design for these) -->
+    <!-- Already in your existing code -->
+  </div>
+
+  <div style="background-color: #ffffff; padding: 30px 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); max-width: 1100px; margin: auto;">
+    <h3 style="color: #002244; font-size: 28px; font-weight: bold; margin-bottom: 20px;">
+      Why Choose NAST India?
+    </h3>
+    <ul style="font-size: 18px; line-height: 1.8; padding-left: 20px; margin-bottom: 20px;">
+      <li><strong>🎓 Internship Included:</strong> Gain real work experience with partner companies.</li>
+      <li><strong>📄 Industry-Certified Certificate:</strong> Recognized credential to boost hiring potential.</li>
+      <li><strong>🧠 100% Practical Learning:</strong> Hands-on projects accelerate your growth.</li>
+      <li><strong>💼 Job & Freelance Assistance:</strong> We help with portfolio, client projects, and placements.</li>
+      <li><strong>🖼 Portfolio Development:</strong> Build a strong portfolio to impress employers and clients.</li>
+      <li><strong>🔁 Doubt Revision Sessions:</strong> Weekly & Sunday revision classes for clarity and mastery.</li>
+      <li><strong>✍️ Freelance Training:</strong> Learn how to pitch, quote, and handle global freelance clients.</li>
+    </ul>
+
+    <h3 style="color: #002244; font-size: 26px; font-weight: bold; margin-top: 30px; margin-bottom: 15px;">
+      Student Life & Gallery
+    </h3>
+    <p style="font-size: 18px; line-height: 1.8;">
+      Life at NAST India is dynamic and hands-on. Students collaborate in a creative agency-style environment – complete with brainstorming, deadlines, and real client presentations. Weekly guest lectures, smart classrooms, and certificate ceremonies keep the learning vibrant and engaging. Our gallery highlights students designing, editing, and celebrating their journey.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- Cards Section -->
+       <div th:replace="~{fragments/card :: card}"></div>
+	   
+	   <!-- Load footer here -->
+	   	 <div th:replace="~{fragments/footer :: footer}"></div>
+	     
+		 
+		 
+</div>
+
+

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAST INDIA </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap JS Bundle (includes Popper.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+  
+ 
+</head>
+<body>
+	
+	
+<div>
+	
+  <!-- Notification Bar 
+  <div class="notification-bar">
+    <div class="notification-left">
+      <span><b>Upgrade to 6.7 Now!</b> <span class="emoji">🚀</span> Get Enhanced Performance with the "Velocity" Engine</span>
+      <button class="learn-more-btn">Learn More</button>
+    </div>
+    <div class="notification-right">
+      <a href="#" class="contact-link"><i>📩</i> Contact Us</a>
+      <span>Latest Version: <b>6.7.35</b></span>
+    </div>
+  </div>-->
+  
+
+
+  <!-- Include navbar fragment here -->
+   <div th:replace="~{fragments/navbar :: navbar}"></div>
+	
+   
+
+   
+   <main class="container-fluid px-0" style="position: absolute">
+	
+	
+	   
+      <!-- Carousel Section -->
+      <div th:replace="~{fragments/carousel :: carousel}"></div>
+	  
+	  <!-- Cards Section -->
+	       <div th:replace="~{fragments/card :: card}"></div>
+	  
+	 <!-- Slider Section -->
+	 <div th:replace="~{fragments/slider :: slider}"></div>
+
+     
+	 <!-- Question Section -->
+	 		<div th:replace="~{fragments/question :: question}"></div>
+					
+	
+	
+		
+	<!-- Contact Section -->
+	<div th:replace="~{fragments/contact :: contact}"></div>
+	
+	<!-- location Section -->
+		<div th:replace="~{fragments/location :: location}"></div>
+		
+	
+	<!-- Load footer here -->
+	 <div th:replace="~{fragments/footer :: footer}"></div>
+	 
+	 
+	  
+	 <div id="whatsapp-float"
+	      style="position: fixed; bottom: 80px; right: 20px; z-index: 9999; cursor: move; transition: all 0.2s ease;"
+	      onmousedown="dragElement(this)">
+	   <a href="https://wa.me/918987284489" target="_blank">
+	     <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png"
+	          alt="WhatsApp"
+	          style="width: 60px; height: 60px; border-radius: 50%; transition: transform 0.2s ease;"
+	          onmouseover="this.style.transform='scale(1.1)'"
+	          onmouseout="this.style.transform='scale(1)'">
+	   </a>
+	 </div>
+
+	 <script>
+	   function dragElement(elmnt) {
+	     var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+
+	     document.onmouseup = closeDragElement;
+	     document.onmousemove = elementDrag;
+
+	     elmnt.onmousedown = function (e) {
+	       e = e || window.event;
+	       e.preventDefault();
+	       pos3 = e.clientX;
+	       pos4 = e.clientY;
+	       document.onmouseup = closeDragElement;
+	       document.onmousemove = elementDrag;
+	     };
+
+	     function elementDrag(e) {
+	       e = e || window.event;
+	       e.preventDefault();
+	       pos1 = pos3 - e.clientX;
+	       pos2 = pos4 - e.clientY;
+	       pos3 = e.clientX;
+	       pos4 = e.clientY;
+	       elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+	       elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+	     }
+
+	     function closeDragElement() {
+	       document.onmouseup = null;
+	       document.onmousemove = null;
+	     }
+	   }
+	 </script>
+
+
+				 
+     </main>
+	 
+	 
+  
+	 </div>
+</body>
+
+</html>
+
+
+
+
+

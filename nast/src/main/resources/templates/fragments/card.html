@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en" th:fragment="card">
+<head>
+  <meta charset="UTF-8">
+  <title>Creative Digital Agency</title>
+</head>
+<body>
+
+  <h1 style="text-align: center; font-size: 36px; color: #0f0f0f; font-weight: 800; margin-top:40px;">
+    We are Strategic Creative Digital Agency Service
+  </h1>
+
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 80px;">
+
+    <!-- Card Template -->
+    <style>
+      .card-link {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .card {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 16px;
+        width: 320px;
+        box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+        display: flex;
+        flex-direction: column;
+        min-height: 400px;
+      }
+
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        font-size: 24px;
+      }
+
+      .card h3 {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        font-weight: 700;
+        color: #1a1a1a;
+      }
+
+      .card p {
+        color: #555;
+        line-height: 1.6;
+        flex-grow: 1;
+      }
+    </style>
+
+    <!-- DesignXpert -->
+    <a th:href="@{/graphics_socialmedia}" class="card-link">
+      <div class="card">
+        <div class="card-icon" style="background-color: #d1f5f0;">🎨</div>
+        <h3>DesignXpert – Graphic & Social Media Design (3 Months)</h3>
+        <p>Master the fundamentals of visual design and branding. You’ll learn tools like Adobe Photoshop, Illustrator, Canva, and more.</p>
+      </div>
+    </a>
+
+    <!-- EditXpert -->
+    <a th:href="@{/video_motion}" class="card-link">
+      <div class="card">
+        <div class="card-icon" style="background-color: #ffe3ea;">✂️</div>
+        <h3>EditXpert – Video Editing & Motion Graphics (3 Months)</h3>
+        <p>Learn to tell stories through video. We cover short-form editing for Reels and YouTube, plus basic motion graphics and advertising videos.</p>
+      </div>
+    </a>
+
+    <!-- MasterXpert -->
+    <a th:href="@{/all_courses}" class="card-link">
+      <div class="card">
+        <div class="card-icon" style="background-color: #e9d8ff;">🧠</div>
+        <h3>MasterXpert – All-In-One Creative Program (6 Months)</h3>
+        <p>Our most comprehensive program for total creative mastery. You’ll complete both DesignXpert and EditXpert tracks plus extra modules on digital marketing, client management, and freelancing.</p>
+      </div>
+    </a>
+
+  </div>
+
+  <!-- CTA Button -->
+  <div style="text-align: center; margin-top: 40px; margin-bottom: 40px;">
+    <a th:href="@{/all_courses}" style="text-decoration: none;">
+      <button style="padding: 14px 24px; background-color: #ff7b00; color: #fff; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; transition: background-color 0.3s ease;"
+              onmouseover="this.style.backgroundColor='#e96e00'"
+              onmouseout="this.style.backgroundColor='#ff7b00'">
+        All Our Services
+      </button>
+    </a>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Webpage</title>
+  <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<!-- Include navbar fragment here -->
+ <div th:replace="~{fragments/navbar :: navbar}"></div>
+ 
+ 
+<main class="container-fluid px-0" style="position: absolute">
+
+ 	         
+ 	         
+ 	      
+ 	      
+
+<!-- Contact Section -->
+<div th:replace="~{fragments/contact :: contact}"></div>	   		 
+ 	   		 
+<!-- Load footer here -->
+<div th:replace="~{fragments/footer :: footer}"></div>
+ 	   			 
+</main>

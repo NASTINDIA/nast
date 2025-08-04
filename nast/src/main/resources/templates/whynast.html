@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Webpage</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #ffffff;">
+
+  <!-- Navbar Fragment -->
+  <div th:replace="~{fragments/navbar :: navbar}"></div>
+
+  <!-- Main Content Area -->
+  <main style="width: 100%; padding: 0; margin: 0;">
+
+    <!-- Full Width Images -->
+    <div style="width: 100%; text-align: center;">
+
+      <!-- First Image -->
+      <img 
+        th:src="@{/images/NAST-1.jpg}" 
+        alt="Banner 1" 
+        style="
+          width: 100%; 
+          max-height: 1800px; 
+          object-fit: contain ; 
+          display: block; 
+           
+          border-radius: 8px; 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+          transition: transform 0.3s ease-in-out;
+        " 
+        onmouseover="this.style.transform='scale(1.01)'" 
+        onmouseout="this.style.transform='scale(1)'"
+      >
+
+      <!-- Second Image -->
+      <img 
+        th:src="@{/images/NAST-2.jpg}" 
+        alt="Banner 2" 
+        style="
+          width: 100%; 
+          max-height: 1800px; 
+          object-fit: contain ; 
+          display: block; 
+          border-radius: 8px; 
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+          transition: transform 0.3s ease-in-out;
+        " 
+        onmouseover="this.style.transform='scale(1.01)'" 
+        onmouseout="this.style.transform='scale(1)'"
+      >
+
+    </div>
+
+  </main>
+
+  <!-- Slider Section -->
+  	 <div th:replace="~{fragments/slider :: slider}"></div>
+	 
+	 <!-- Cards Section -->
+	  <div th:replace="~{fragments/card :: card}"></div>
+	  
+	  <!-- Question Section -->
+	  <div th:replace="~{fragments/question :: question}"></div>
+	 
+  <!-- Footer Fragment -->
+  <div th:replace="~{fragments/footer :: footer}"></div>
+
+</body>
+</html>

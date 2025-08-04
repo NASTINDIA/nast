@@ -1,0 +1,231 @@
+<!-- fragments/navbar.html -->
+<nav class="navbar" th:fragment="navbar">
+  <div class="container">
+    <div class="logo">
+      <a th:href="@{/}">
+        <img th:src="@{/images/logonast.png}" alt="NAST India Logo">
+      </a>
+    </div>
+
+    <!-- Hamburger Toggle -->
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="/whynast">Why NAST India</a></li>
+
+      <!-- Courses Dropdown -->
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle no-underline">Courses</a>
+        <ul class="dropdown-menu">
+          <li><a th:href="@{/graphics_socialmedia}" class="no-underline">DesignXpert</a></li>
+          <li><a th:href="@{/video_motion}" class="no-underline">EditXpert</a></li>
+          <li><a th:href="@{/all_courses}" class="no-underline">MasterXpert</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/studentwork">Student's Life</a></li>
+      <li><a th:href="@{/contacts}">Contact us</a></li>
+    </ul>
+
+    <div class="buttons">
+      <a th:href="@{/franchise}" class="buy-now-btn">Franchise</a>
+      <a th:href="@{/admission}" class="buy-now-btn">Admission Now</a>
+    </div>
+  </div>
+
+  <!-- STYLES -->
+  <style>
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 0;
+      height: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: 0 20px;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 80px;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #1B4584;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li {
+      position: relative;
+    }
+
+    .nav-links li a {
+      color: #004c73;
+      text-decoration: none;
+      padding: 0.5rem;
+      font-weight: 500;
+      display: inline-block;
+      position: relative;
+    }
+
+    .nav-links li a:not(.no-underline)::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #EC2A28;
+      transition: width 0.3s ease;
+    }
+
+    .nav-links li a:not(.no-underline):hover::after {
+      width: 100%;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border-radius: 5px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      min-width: 160px;
+      z-index: 999;
+      list-style: none; /* Remove bullet */
+      padding: 0;
+      margin: 0;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu li a {
+      display: block;
+      padding: 10px 15px;
+      color: #004c73;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .dropdown-menu li a:hover {
+      background-color: #F57C00;
+      color: white;
+    }
+
+    .dropdown-toggl	e::after {
+     
+      font-size: 0.6rem;
+    }
+
+    .buy-now-btn {
+      background-color: #1B4584;
+      color: white;
+      font-weight: bold;
+      padding: 6px 18px;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-left: 1rem;
+      display: inline-block;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+
+    .buy-now-btn:hover {
+      background-color: #D42628;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 10px;
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+        margin-top: 20px;
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+
+	  .dropdown-menu {
+	      position: static;
+	      box-shadow: none;
+	      background: transparent;
+	      padding-left: 0; /* ✅ Removed space */
+	    }
+
+		.dropdown-menu li a {
+		   padding: 8px 0;
+		   text-align: center; /* Optional: ensure consistent alignment */
+		 }
+
+      .buttons {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+      }
+
+      .buy-now-btn {
+        margin: 5px 0;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- SCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const toggle = document.getElementById("menu-toggle");
+      const navLinks = document.getElementById("nav-links");
+
+      toggle.addEventListener("click", () => {
+        navLinks.classList.toggle("show");
+      });
+
+      // Optional: allow dropdown toggle on mobile click
+      const dropdownToggles = document.querySelectorAll(".dropdown-toggle");
+      dropdownToggles.forEach(toggle => {
+        toggle.addEventListener("click", (e) => {
+          if (window.innerWidth <= 768) {
+            e.preventDefault();
+            const dropdownMenu = toggle.nextElementSibling;
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+          }
+        });
+      });
+    });
+  </script>
+</nav>
