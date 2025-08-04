@@ -1,8 +1,14 @@
-FROM maven:3.8.3-openjdk-17 AS build
-COPY..
-RUN mvn clean package -DskipTests
-
+# Use OpenJDK base image
 FROM openjdk:17-jdk-slim
-COPY --from=build /target/demo--SNAPSHOT.jar demo.jar
+
+# Set working directory
+WORKDIR /app
+
+# Copy your jar file
+COPY target/*.jar app.jar
+
+# Expose port
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","demo.jar"]
+
+# Run the jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
